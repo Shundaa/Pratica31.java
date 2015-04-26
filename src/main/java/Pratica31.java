@@ -1,5 +1,5 @@
 
-import java.util.Calendar;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 /*
@@ -13,15 +13,16 @@ import java.util.GregorianCalendar;
  */
 public class Pratica31 {
 
-    private static long fim;
     private static long inicio = System.currentTimeMillis();
+    private static long fim;
     private static String meuNome = ("Cesar Batista");
     private static String meusNomes[] = meuNome.split(" ");
     private static int tamanho = meusNomes.length;
     private static GregorianCalendar dataNascimento = new GregorianCalendar(1995, 4, 9);
     private static GregorianCalendar cal = new GregorianCalendar();
-    private static int dias;
-
+    private static Date data;
+    private static Date data2;
+    private static long dia;
     public static void main(String[] args) {
         System.out.println(meuNome.toUpperCase());
         for (int i = tamanho; i > 0; i--) {
@@ -35,17 +36,11 @@ public class Pratica31 {
                 System.out.printf("%s. ", meusNomes[i - 1].toUpperCase().charAt(0));
             }
         }
-        dias = (cal.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR)) * 365;
-        dias += (cal.get(Calendar.MONTH) - dataNascimento.get(Calendar.MONTH)) * 30;
-        dias += cal.get(Calendar.DAY_OF_MONTH) - dataNascimento.get(Calendar.DAY_OF_MONTH);
-        for (int i = dataNascimento.get(Calendar.YEAR); i < cal.get(Calendar.YEAR); i++) {
-            if (i % 4 == 0) 
-                dias++;
-        }
-        System.out.printf ("\n%d\n",dias);
-        fim=System.currentTimeMillis()-inicio;
-        System.out.println(fim);
-        
-        
+       data=cal.getTime();
+       data2=dataNascimento.getTime();
+       System.out.printf("\n");
+       System.out.printf("%d\n",(data.getTime()-data2.getTime())/86400000);
+       fim=System.currentTimeMillis()-inicio;
+       System.out.println(fim);
     }
 }
