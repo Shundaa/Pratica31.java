@@ -30,9 +30,9 @@ public class Pratica31 {
                 for (int j = 1; j < meusNomes[i - 1].length(); j++) {
                     System.out.printf("%s", meusNomes[i - 1].toLowerCase().charAt(j));
                 }
-                System.out.printf(",");
+                System.out.printf(", ");
             } else {
-                System.out.printf("%s.", meusNomes[i - 1].toUpperCase().charAt(0));
+                System.out.printf("%s. ", meusNomes[i - 1].toUpperCase().charAt(0));
             }
         }
         dias = (cal.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR)) * 365;
